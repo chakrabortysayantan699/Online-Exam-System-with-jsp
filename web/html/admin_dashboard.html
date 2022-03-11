@@ -1,0 +1,78 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
+		<meta name="description" content="Explore an example of an online examination system in JavaScript created with DHTMLX UI widgets. Download the demo and try free of charge for 30 days!"/>
+		<meta name="title" content="JavaScript Online Examination System - DHTMLX Demo" />
+		<title>JavaScript Online Examination System - DHTMLX Demo</title>
+		<link rel="manifest" href="./static/site.webmanifest"/>
+		<link rel="mask-icon" href="./static/safari-pinned-tab.svg" color="#5bbad5"/>
+		<meta name="msapplication-TileColor" content="#00aba9"/>
+		<meta name="theme-color" content="#00aba9"/>
+		<link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon"/>
+		<link rel="icon" href="./static/icon-16.png" sizes="16x16"/>
+		<link rel="icon" href="./static/icon-32.png" sizes="32x32"/>
+		<link rel="icon" href="./static/icon-48.png" sizes="48x48"/>
+		<link rel="icon" href="./static/icon-96.png" sizes="96x96"/>
+		<link rel="icon" href="./static/icon-144.png" sizes="144x144"/>
+		<!-- Google Tag Manager -->
+		<script>
+			(function(w, d, s, l, i) {
+				w[l] = w[l] || [];
+				w[l].push({
+					"gtm.start": new Date().getTime(),
+					event: "gtm.js"
+				});
+				var f = d.getElementsByTagName(s)[0],
+					j = d.createElement(s),
+					dl = l != "dataLayer" ? "&l=" + l : "";
+				j.async = true;
+				j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+				f.parentNode.insertBefore(j, f);
+			})(window, document, "script", "dataLayer", "GTM-KFBJNX");
+		</script>
+		<!-- Icons -->
+		<link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.0.96/css/materialdesignicons.min.css"/>
+		<!-- Popup styles -->
+		<link rel="stylesheet" type="text/css" href="/codebase/css/style.css?ver=250">
+		<style>
+			.site-popup {
+				z-index: 10001;
+			}
+
+			.modal-form {
+				font-size: 16px;
+			}
+
+			.dhx_sample-btn--cta:hover {
+				color: #fff;
+			}
+		</style>
+		<!-- Suite -->
+		<script src="./lib/suite/suite.js"></script>
+		<link rel="stylesheet" href="./lib/suite/suite.css"/>
+		<!-- App -->
+		<script src="js/app.js"></script>
+		<link rel="stylesheet" href="css/app.css" />
+	</head>
+	<body>
+		<section class="demo--container" id="top_layout">
+		
+		</section>
+	</body>
+	<!-- Footer -->
+	<!-- <script type="text/javascript" src="https://dhtmlx.com/docs/products/demoApps/demoFooter/footer.js"></script> -->
+	<link rel="stylesheet" href="https://dhtmlx.com/docs/products/demoApps/demoFooter/footer.css"/>
+	<script type="text/javascript">generateFooter("exam-system")</script>
+
+	<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js?ver=4.3.1"></script>
+	<script type="text/javascript" src="/codebase/js/functions.js?ver=80"></script>
+
+	<script type="text/javascript">
+		const app = new examsystemdemo.ExamSystemApp();
+		app.render("#top_layout");
+	</script>
+</html>

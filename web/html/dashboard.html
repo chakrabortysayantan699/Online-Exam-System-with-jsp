@@ -1,0 +1,2593 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Explore an example of an online examination system in JavaScript created with DHTMLX UI widgets. Download the demo and try free of charge for 30 days!"
+    />
+    <meta
+      name="title"
+      content=" Online Examination System"
+    />
+    <title>Online Examination</title>
+    <link rel="manifest" href="./static/site.webmanifest" />
+    <link
+      rel="mask-icon"
+      href="./static/safari-pinned-tab.svg"
+      color="#5bbad5"
+    />
+    <meta name="msapplication-TileColor" content="#00aba9" />
+    <meta name="theme-color" content="#00aba9" />
+    <!-- <link rel="shortcut icon" href="./static/favicon.ico" type="image/x-icon" /> -->
+    <link rel="icon" href="./static/icon-16.png" sizes="16x16" />
+    <link rel="icon" href="./static/icon-32.png" sizes="32x32" />
+    <link rel="icon" href="./static/icon-48.png" sizes="48x48" />
+    <link rel="icon" href="./static/icon-96.png" sizes="96x96" />
+    <link rel="icon" href="./static/icon-144.png" sizes="144x144" />
+    <!-- Google Tag Manager -->
+    <script async="" src="https://f.clarity.ms/s/0.6.31/clarity.js"></script>
+    <script async="" src="https://www.clarity.ms/tag/6xh133hitp"></script>
+    <script
+      src="https://connect.facebook.net/signals/config/448877565473724?v=2.9.49&amp;r=stable"
+      async=""
+    ></script>
+    <script
+      async=""
+      src="https://connect.facebook.net/en_US/fbevents.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://mc.yandex.ru/metrika/watch.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.google-analytics.com/analytics.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.google-analytics.com/gtm/js?id=GTM-TTKRZ85&amp;t=gtm4&amp;cid=2007564241.1642765045"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://static.hotjar.com/c/hotjar-2603633.js?sv=7"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="//www.googleadservices.com/pagead/conversion_async.js"
+    ></script>
+    <script
+      type="text/javascript"
+      async=""
+      src="https://www.google-analytics.com/analytics.js"
+    ></script>
+    <script
+      async=""
+      src="https://www.googletagmanager.com/gtm.js?id=GTM-KFBJNX"
+    ></script>
+
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          "gtm.start": new Date().getTime(),
+          event: "gtm.js",
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-KFBJNX");
+    </script>
+    <!-- Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.materialdesignicons.com/4.0.96/css/materialdesignicons.min.css"
+    />
+    <!-- Popup styles -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="/codebase/css/style.css?ver=250"
+    />
+    <style>
+      .site-popup {
+        z-index: 10001;
+      }
+
+      .modal-form {
+        font-size: 16px;
+      }
+
+      .dhx_sample-btn--cta:hover {
+        color: #fff;
+      }
+    </style>
+    <!-- Suite -->
+    <script src="./lib/suite/suite.js"></script>
+    <link rel="stylesheet" href="./lib/suite/suite.css" />
+    <!-- App -->
+    <script src="js/app.js"></script>
+    <link rel="stylesheet" href="css/app.css" />
+  </head>
+  <body>
+    <section class="demo--container" id="top_layout">
+      <div
+        class="dhx_widget dhx_layout dhx_layout-columns"
+        style="width: 100%; height: 100%; flex: 1 1 auto"
+      >
+        <div
+          aria-label="tab-content-sidebar"
+          class="dhx_layout-cell"
+          style="flex: 0 0 auto"
+        >
+          <nav
+            class="dhx_widget dhx_sidebar dhx_demo-sidebar"
+            style="width: 200px"
+          >
+            <div class="scroll-view-wrapper">
+              <div
+                class="scroll-view"
+                style="width: calc(100% + 17px); height: calc(100% + 17px)"
+              >
+                <ul
+                  data-dhx-widget-id="u1642765066815"
+                  tabindex="0"
+                  class="dhx_navbar dhx_navbar--vertical"
+                >
+                  <li
+                    class="dhx_sidebar__item dhx_demo-sidebar__logo"
+                    data-dhx-id="logo"
+                    role="none"
+                  >
+                    <img src="./assets/img/logo.svg" alt="dhtmlxLogo" />
+                  </li>
+                  <li class="dhx_sidebar__item" role="none">
+                    <button
+                      class="
+                        dhx_button dhx_sidebar-button dhx_sidebar-button--active
+                      "
+                      data-dhx-id="exams"
+                      type="button"
+                      aria-disabled="false"
+                      aria-label="All exams"
+                      aria-pressed="true"
+                    >
+                      <span
+                        class="mdi mdi-star-circle dhx_sidebar-button__icon"
+                        aria-hidden="true"
+                      ></span
+                      ><span class="dhx_sidebar-button__text">All exams</span>
+                    </button>
+                  </li>
+                  <li class="dhx_sidebar__item" role="none">
+                    <button
+                      class="dhx_button dhx_sidebar-button"
+                      data-dhx-id="results"
+                      type="button"
+                      aria-disabled="false"
+                      aria-label="Results"
+                    >
+                      <span
+                        class="mdi mdi-medal dhx_sidebar-button__icon"
+                        aria-hidden="true"
+                      ></span
+                      ><span class="dhx_sidebar-button__text">Results</span>
+                    </button>
+                  </li>
+                  <li class="dhx_sidebar__item" role="none">
+                    <button
+                      class="dhx_button dhx_sidebar-button"
+                      data-dhx-id="certificates"
+                      type="button"
+                      aria-disabled="false"
+                      aria-label="Certificates"
+                    >
+                      <span
+                        class="mdi mdi-stamper dhx_sidebar-button__icon"
+                        aria-hidden="true"
+                      ></span
+                      ><span class="dhx_sidebar-button__text"
+                        >Certificates</span
+                      >
+                    </button>
+                  </li>
+                  <li class="dhx_sidebar__item" role="none">
+                    <button
+                      class="dhx_button dhx_sidebar-button"
+                      data-dhx-id="reports"
+                      type="button"
+                      aria-disabled="false"
+                      aria-label="Reports"
+                    >
+                      <span
+                        class="
+                          mdi mdi-chart-areaspline
+                          dhx_sidebar-button__icon
+                        "
+                        aria-hidden="true"
+                      ></span
+                      ><span class="dhx_sidebar-button__text">Reports</span>
+                    </button>
+                  </li>
+                  <li class="dhx_sidebar__item" role="none">
+                    <button
+                      class="dhx_button dhx_sidebar-button"
+                      data-dhx-id="settings"
+                      type="button"
+                      aria-disabled="false"
+                      aria-label="Settings"
+                    >
+                      <span
+                        class="mdi mdi-tune dhx_sidebar-button__icon"
+                        aria-hidden="true"
+                      ></span
+                      ><span class="dhx_sidebar-button__text">Settings</span>
+                    </button>
+                  </li>
+                  <li
+                    class="dhx_sidebar__item dhx_sidebar__item--spacer"
+                    role="none"
+                  ></li>
+                </ul>
+              </div>
+              <div
+                class="y-scroll"
+                style="
+                  width: 6px;
+                  height: 100%;
+                  right: 0px;
+                  top: 0px;
+                  position: absolute;
+                "
+              >
+                <div
+                  class="scroll-runner"
+                  style="height: 0px; top: 0px; opacity: 0"
+                ></div>
+              </div>
+              <div
+                class="x-scroll"
+                style="
+                  width: 100%;
+                  height: 6px;
+                  left: 0px;
+                  bottom: 0px;
+                  position: absolute;
+                "
+              >
+                <div
+                  class="scroll-runner"
+                  style="width: 0px; left: 0px; opacity: 0"
+                ></div>
+              </div>
+            </div>
+          </nav>
+        </div>
+        <div class="dhx_layout-cell dhx_layout-rows" style="flex: 1 0 1px">
+          <div
+            aria-label="tab-content-toolbar"
+            class="dhx_layout-cell"
+            style="flex: 0 0 auto"
+          >
+            <nav
+              class="dhx_widget dhx_toolbar dhx_demo-toolbar"
+              style="height: 56px"
+            >
+              <div class="scroll-view-wrapper">
+                <div
+                  class="scroll-view"
+                  style="width: calc(100% + 17px); height: calc(100% + 17px)"
+                >
+                  <ul
+                    data-dhx-widget-id="u1642765066820"
+                    tabindex="0"
+                    role="toolbar"
+                    aria-label=""
+                    class="dhx_navbar dhx_navbar--horizontal"
+                  >
+                    <li class="dhx_toolbar__item" role="none">
+                      <button
+                      onlick="location.href='addQuestion.jsp'"
+                        class="
+                          dhx_button
+                          dhx_button--color_primary
+                          dhx_button--size_medium
+                          dhx_button--view_flat
+                          dhx_button--circle
+                        "
+                        data-dhx-id="addButton"
+                        type="button"
+                        aria-disabled="false"
+                        aria-label="Add exam"
+                      >
+                        <span
+                          class="dhx_button__icon dxi dxi dxi-plus"
+                          aria-hidden="true"
+                        ></span
+                        ><span class="dhx_button__text">Add exam</span>
+                      </button>
+                    </li>
+                    <li
+                      class="dhx_toolbar__item dhx_toolbar__item--spacer"
+                      role="none"
+                    ></li>
+                    <li class="dhx_toolbar__item" role="none">
+                      <button
+                        class="
+                          dhx_button
+                          dhx_toolbar-button-image
+                          dhx_toolbar-button-image--icon
+                        "
+                        data-dhx-id="u1642765066822"
+                        type="button"
+                        aria-disabled="false"
+                      >
+                        <span
+                          class="dhx_toolbar-button-image__image"
+                          role="presentation"
+                          style="
+                            background-image: url('./assets/img/avatar.png');
+                          "
+                        ></span>
+                        <div
+                          class="
+                            dhx_navbar-count
+                            dhx_toolbar-button-image__count
+                            dhx_navbar-count--color_danger
+                          "
+                        >
+                          15
+                        </div>
+                      </button>
+                    </li>
+                  </ul>
+                </div>
+                <div
+                  class="y-scroll"
+                  style="
+                    width: 6px;
+                    height: 100%;
+                    right: 0px;
+                    top: 0px;
+                    position: absolute;
+                  "
+                >
+                  <div
+                    class="scroll-runner"
+                    style="height: 0px; top: 0px; opacity: 0"
+                  ></div>
+                </div>
+                <div
+                  class="x-scroll"
+                  style="
+                    width: 100%;
+                    height: 6px;
+                    left: 0px;
+                    bottom: 0px;
+                    position: absolute;
+                  "
+                >
+                  <div
+                    class="scroll-runner"
+                    style="width: 0px; left: 0px; opacity: 0"
+                  ></div>
+                </div>
+              </div>
+            </nav>
+          </div>
+          <div
+            aria-label="tab-content-container"
+            class="dhx_layout-cell"
+            style="flex: 1 1 auto"
+          >
+            <div
+              class="dhx_widget dhx_layout dhx_layout-rows"
+              style="width: 100%; height: 100%; flex: 1 1 auto"
+            >
+              <div
+                aria-label="tab-content-filter"
+                class="dhx_layout-cell"
+                style="flex: 0 0 auto; padding: 0px 12px"
+              >
+                <div
+                  class="
+                    dhx_widget
+                    dhx_layout
+                    dhx_layout-columns
+                    dhx_demo-exam-filter
+                    dhx_form
+                  "
+                  role="form"
+                  style="
+                    width: 100%;
+                    height: 100%;
+                    flex: 1 1 auto;
+                    padding: 8px;
+                  "
+                >
+                  <div
+                    aria-label="tab-content-exam"
+                    class="dhx_layout-cell dhx_form-element"
+                    style="width: 270px; padding: 0px 12px 0px 0px"
+                  >
+                    <div data-dhx-id="exam" class="dhx_form-group">
+                      <div
+                        data-dhx-widget-id="u1642765066830"
+                        class="dhx_widget dhx_combobox"
+                      >
+                        <label
+                          class="dhx_label dhx_combobox__label"
+                          style="max-width: 100%"
+                          >Exam</label
+                        >
+                        <div class="dhx_combobox-input-box">
+                          <div class="dhx_combobox-input__icon">
+                            <span class="dxi dxi-menu-down"></span>
+                          </div>
+                          <div class="dhx_combobox-input-list-wrapper">
+                            <ul class="dhx_combobox-input-list">
+                              <li
+                                class="
+                                  dhx_combobox-input-list__item
+                                  dhx_combobox-input-list__item--input
+                                "
+                              >
+                                <input
+                                  type="text"
+                                  placeholder="All exams"
+                                  aria-label="Type or select value"
+                                  class="dhx_combobox-input"
+                                />
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="">
+                        <span class="dhx_input__caption"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-label="tab-content-subject"
+                    class="dhx_layout-cell dhx_form-element"
+                    style="width: 270px; padding: 0px 12px 0px 0px"
+                  >
+                    <div data-dhx-id="subject" class="dhx_form-group">
+                      <div
+                        data-dhx-widget-id="u1642765066840"
+                        class="dhx_widget dhx_combobox"
+                      >
+                        <label
+                          class="dhx_label dhx_combobox__label"
+                          style="max-width: 100%"
+                          >Subject</label
+                        >
+                        <div class="dhx_combobox-input-box">
+                          <div class="dhx_combobox-input__icon">
+                            <span class="dxi dxi-menu-down"></span>
+                          </div>
+                          <div class="dhx_combobox-input-list-wrapper">
+                            <ul class="dhx_combobox-input-list">
+                              <li
+                                class="
+                                  dhx_combobox-input-list__item
+                                  dhx_combobox-input-list__item--input
+                                "
+                              >
+                                <input
+                                  type="text"
+                                  placeholder="All subjects"
+                                  aria-label="Type or select value"
+                                  class="dhx_combobox-input"
+                                />
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="">
+                        <span class="dhx_input__caption"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-label="tab-content-level"
+                    class="dhx_layout-cell dhx_form-element"
+                    style="width: 270px; padding: 0px 12px 0px 0px"
+                  >
+                    <div data-dhx-id="level" class="dhx_form-group">
+                      <div
+                        data-dhx-widget-id="u1642765066850"
+                        class="dhx_widget dhx_combobox"
+                      >
+                        <label
+                          class="dhx_label dhx_combobox__label"
+                          style="max-width: 100%"
+                          >Difficulty level</label
+                        >
+                        <div class="dhx_combobox-input-box">
+                          <div class="dhx_combobox-input__icon">
+                            <span class="dxi dxi-menu-down"></span>
+                          </div>
+                          <div class="dhx_combobox-input-list-wrapper">
+                            <ul class="dhx_combobox-input-list">
+                              <li
+                                class="
+                                  dhx_combobox-input-list__item
+                                  dhx_combobox-input-list__item--input
+                                "
+                              >
+                                <input
+                                  type="text"
+                                  placeholder="All levels"
+                                  aria-label="Type or select value"
+                                  class="dhx_combobox-input"
+                                />
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="">
+                        <span class="dhx_input__caption"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div
+                    aria-label="tab-content-status"
+                    class="
+                      dhx_layout-cell
+                      dhx_demo-filter-form__checkboxGroup
+                      dhx_form-element
+                    "
+                    style="width: 200px; padding: 0px 12px 0px 0px"
+                  >
+                    <fieldset class="dhx_form-group-fieldset">
+                      <div
+                        class="dhx_form-group dhx_form-group--checkbox-group"
+                        data-dhx-id="status"
+                        role="radiogroup"
+                      >
+                        <legend
+                          for="u1642765066858"
+                          class="dhx_label"
+                          style="max-width: 100%"
+                        >
+                          Status
+                        </legend>
+                        <div class="dhx_checkbox-group--container">
+                          <div
+                            class="dhx_widget dhx_layout dhx_layout-columns"
+                            style="width: 100%; height: 100%; flex: 1 1 auto"
+                          >
+                            <div
+                              aria-label="tab-content-active"
+                              class="dhx_layout-cell"
+                              style="flex: 1 1 auto"
+                            >
+                              <label
+                                class="
+                                  dhx_checkbox
+                                  dhx_form-group
+                                  dhx_form-group--checkbox
+                                "
+                                ><div class="dhx_checkbox__holder">
+                                  <input
+                                    type="checkbox"
+                                    id="active"
+                                    value=""
+                                    name=""
+                                    class="dhx_checkbox__input"
+                                  /><span
+                                    class="dhx_checkbox__visual-input"
+                                  ></span
+                                  ><span class="dhx_text">Active</span>
+                                </div></label
+                              >
+                            </div>
+                            <div
+                              aria-label="tab-content-hidden"
+                              class="dhx_layout-cell"
+                              style="flex: 1 1 auto"
+                            >
+                              <label
+                                class="
+                                  dhx_checkbox
+                                  dhx_form-group
+                                  dhx_form-group--checkbox
+                                "
+                                ><div class="dhx_checkbox__holder">
+                                  <input
+                                    type="checkbox"
+                                    id="hidden"
+                                    value=""
+                                    name=""
+                                    class="dhx_checkbox__input"
+                                  /><span
+                                    class="dhx_checkbox__visual-input"
+                                  ></span
+                                  ><span class="dhx_text">Hidden</span>
+                                </div></label
+                              >
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                  </div>
+                  <div
+                    aria-label="tab-content-apply"
+                    class="
+                      dhx_layout-cell dhx_form-element
+                      dhx_button--full-gravity
+                    "
+                    style="width: 142px; padding: 25px 0px 0px"
+                  >
+                    <button
+                      id="u1642765066866"
+                      data-dhx-id="apply"
+                      type="button"
+                      class="
+                        dhx_button
+                        dhx_button--color_primary
+                        dhx_button--size_medium
+                        dhx_button--view_flat
+                        dhx_button--width_full
+                        dhx_button--circle
+                      "
+                    >
+                      <span class="dhx_button__text">Apply filter</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div
+                aria-label="tab-content-grid"
+                class="dhx_layout-cell"
+                style="flex: 1 1 auto; padding: 0px 20px 20px"
+              >
+                <div
+                  class="dhx_grid dhx_widget dhx_demo-exam-grid"
+                  data-dhx-widget-id="u1642765066876"
+                  data-dhx-root-id="u1642765066876"
+                  role="grid"
+                  aria-rowcount="11"
+                  aria-colcount="7"
+                >
+                  <div class="dhx-resize-observer"></div>
+                  <div
+                    class="
+                      dhx_grid-content dhx_grid-less-width dhx_grid-less-height
+                    "
+                    role="presentation"
+                    style="width: 1296px; height: 598px"
+                  >
+                    <div
+                      role="presentation"
+                      class="dhx_grid-body"
+                      style="height: 596px; width: 1294px"
+                    >
+                      <div class="scroll-view-wrapper">
+                        <div
+                          class="scroll-view"
+                          style="
+                            width: calc(100% + 17px);
+                            height: calc(100% + 17px);
+                          "
+                        >
+                          <div>
+                            <div
+                              class="dhx_header-wrapper"
+                              role="presentation"
+                              style="
+                                position: sticky;
+                                top: 0px;
+                                height: 40px;
+                                width: 1294px;
+                              "
+                            >
+                              <div
+                                role="presentation"
+                                class="dhx_grid-header"
+                                style="
+                                  height: 40px;
+                                  padding-left: 0px;
+                                  width: 1294px;
+                                "
+                              >
+                                <div
+                                  role="rowgroup"
+                                  aria-rowcount="1"
+                                  class="dhx_header-rows"
+                                >
+                                  <div
+                                    role="row"
+                                    aria-rowindex="1"
+                                    class="dhx_header-row"
+                                    style="height: 40px"
+                                  >
+                                    <div
+                                      class="
+                                        dhx_grid-header-cell
+                                        dhx_grid-header-cell--sortable
+                                        dhx_grid-header-cell--align_left
+                                        dhx_first-column-cell
+                                      "
+                                      data-dhx-id="exam"
+                                      aria-colindex="1"
+                                      role="columnheader"
+                                      aria-sort="none"
+                                      style="width: 260px; height: 40px"
+                                    >
+                                      <div
+                                        role="presentation"
+                                        class="dhx_grid-header-cell-text"
+                                      >
+                                        <span
+                                          class="
+                                            dhx_grid-header-cell-text_content
+                                          "
+                                          role="button"
+                                          aria-label="Sort by Exam"
+                                          >Exam</span
+                                        >
+                                      </div>
+                                      <div
+                                        class="
+                                          dxi dxi-sort-variant
+                                          dhx_grid-sort-icon
+                                        "
+                                        aria-hidden="true"
+                                      ></div>
+                                    </div>
+                                    <div
+                                      class="
+                                        dhx_grid-header-cell
+                                        dhx_grid-header-cell--align_center
+                                        dhx_align-center
+                                      "
+                                      data-dhx-id="view"
+                                      aria-colindex="2"
+                                      role="columnheader"
+                                      aria-sort="none"
+                                      style="width: 137.286px; height: 40px"
+                                    >
+                                      <div
+                                        role="presentation"
+                                        class="dhx_grid-header-cell-text"
+                                      >
+                                        <span
+                                          class="
+                                            dhx_grid-header-cell-text_content
+                                          "
+                                          >View exam</span
+                                        >
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="
+                                        dhx_grid-header-cell
+                                        dhx_grid-header-cell--sortable
+                                        dhx_grid-header-cell--align_left
+                                      "
+                                      data-dhx-id="level"
+                                      aria-colindex="3"
+                                      role="columnheader"
+                                      aria-sort="none"
+                                      style="width: 347.571px; height: 40px"
+                                    >
+                                      <div
+                                        role="presentation"
+                                        class="dhx_grid-header-cell-text"
+                                      >
+                                        <span
+                                          class="
+                                            dhx_grid-header-cell-text_content
+                                          "
+                                          role="button"
+                                          aria-label="Sort by Difficulty level"
+                                          >Difficulty level</span
+                                        >
+                                      </div>
+                                      <div
+                                        class="
+                                          dxi dxi-sort-variant
+                                          dhx_grid-sort-icon
+                                        "
+                                        aria-hidden="true"
+                                      ></div>
+                                    </div>
+                                    <div
+                                      class="
+                                        dhx_grid-header-cell
+                                        dhx_grid-header-cell--sortable
+                                        dhx_grid-header-cell--align_left
+                                        dhx_align-left
+                                      "
+                                      data-dhx-id="date"
+                                      aria-colindex="4"
+                                      role="columnheader"
+                                      aria-sort="none"
+                                      style="width: 137.286px; height: 40px"
+                                    >
+                                      <div
+                                        role="presentation"
+                                        class="dhx_grid-header-cell-text"
+                                      >
+                                        <span
+                                          class="
+                                            dhx_grid-header-cell-text_content
+                                          "
+                                          role="button"
+                                          aria-label="Sort by Due date"
+                                          >Due date</span
+                                        >
+                                      </div>
+                                      <div
+                                        class="
+                                          dxi dxi-sort-variant
+                                          dhx_grid-sort-icon
+                                        "
+                                        aria-hidden="true"
+                                      ></div>
+                                    </div>
+                                    <div
+                                      class="
+                                        dhx_grid-header-cell
+                                        dhx_grid-header-cell--sortable
+                                        dhx_grid-header-cell--align_center
+                                        dhx_align-center
+                                      "
+                                      data-dhx-id="status"
+                                      aria-colindex="5"
+                                      role="columnheader"
+                                      aria-sort="none"
+                                      style="width: 137.286px; height: 40px"
+                                    >
+                                      <div
+                                        role="presentation"
+                                        class="dhx_grid-header-cell-text"
+                                      >
+                                        <span
+                                          class="
+                                            dhx_grid-header-cell-text_content
+                                          "
+                                          role="button"
+                                          aria-label="Sort by Status"
+                                          >Status</span
+                                        >
+                                      </div>
+                                      <div
+                                        class="
+                                          dxi dxi-sort-variant
+                                          dhx_grid-sort-icon
+                                        "
+                                        aria-hidden="true"
+                                      ></div>
+                                    </div>
+                                    <div
+                                      class="
+                                        dhx_grid-header-cell
+                                        dhx_grid-header-cell--align_center
+                                        dhx_align-center
+                                      "
+                                      data-dhx-id="time"
+                                      aria-colindex="6"
+                                      role="columnheader"
+                                      aria-sort="none"
+                                      style="width: 137.286px; height: 40px"
+                                    >
+                                      <div
+                                        role="presentation"
+                                        class="dhx_grid-header-cell-text"
+                                      >
+                                        <span
+                                          class="
+                                            dhx_grid-header-cell-text_content
+                                          "
+                                          >Average test time</span
+                                        >
+                                      </div>
+                                    </div>
+                                    <div
+                                      class="
+                                        dhx_grid-header-cell
+                                        dhx_grid-header-cell--align_center
+                                        dhx_last-column-cell dhx_align-center
+                                      "
+                                      data-dhx-id="controls"
+                                      aria-colindex="7"
+                                      role="columnheader"
+                                      aria-sort="none"
+                                      style="width: 137.286px; height: 40px"
+                                    >
+                                      <div
+                                        role="presentation"
+                                        class="dhx_grid-header-cell-text"
+                                      >
+                                        <span
+                                          class="
+                                            dhx_grid-header-cell-text_content
+                                          "
+                                          >Exam controls</span
+                                        >
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  class="dhx_header-spans dhx_header-rows"
+                                  role="presentation"
+                                  style="margin-left: 0px"
+                                >
+                                  <div
+                                    class="dhx_span-row dhx_header-row"
+                                    aria-hidden="true"
+                                    style="top: 0px; height: 40px"
+                                  ></div>
+                                </div>
+                              </div>
+                              <div
+                                role="presentation"
+                                style="width: 1294px"
+                              ></div>
+                            </div>
+                            <div
+                              role="presentation"
+                              class="dhx_data-wrap"
+                              style="
+                                height: 440px;
+                                width: 1294px;
+                                padding-left: 0px;
+                                padding-top: 0px;
+                              "
+                            >
+                              <div
+                                role="rowgroup"
+                                aria-rowcount="11"
+                                class="dhx_grid_data"
+                              >
+                                <div
+                                  data-dhx-id="Web Development"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="1"
+                                  style="height: 40px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_tree-cell
+                                      dhx_grid-expand-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px;
+                                    "
+                                  >
+                                    <div
+                                      class="
+                                        dhx_grid-expand-cell-icon
+                                        dxi dxi-chevron-up
+                                      "
+                                      data-dhx-id="Web Development"
+                                      role="button"
+                                      aria-label="Collapse group"
+                                      style="padding: 0px 0px 0px 4px"
+                                    ></div>
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      Web Development
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="0"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                </div>
+                                <div
+                                  data-dhx-id="u1642765066777"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="2"
+                                  style="height: 40px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_tree-cell dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px 0px 0px 40px;
+                                    "
+                                  >
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      DHTMLX Suite for beginners
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__view">
+                                        <button
+                                          class="
+                                            dhx_button
+                                            dhx_button--color_primary
+                                            dhx_button--size_small
+                                            dhx_button--view_flat
+                                            dhx_button--circle
+                                          "
+                                        >
+                                          View exam
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  >
+                                    Intro
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    21/01/2022
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__status">
+                                        <div class="dhx_demo-active">
+                                          active
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    10 min
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__controls">
+                                        <button class="dhx_button edit">
+                                          <i
+                                            class="
+                                              mdi mdi-pencil
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                        <button class="dhx_button remove">
+                                          <i
+                                            class="
+                                              mdi mdi-delete
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  data-dhx-id="u1642765066778"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="3"
+                                  style="height: 40px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_tree-cell dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px 0px 0px 40px;
+                                    "
+                                  >
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      Programming with HTML &amp; CSS
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__view">
+                                        <button
+                                          class="
+                                            dhx_button
+                                            dhx_button--color_primary
+                                            dhx_button--size_small
+                                            dhx_button--view_flat
+                                            dhx_button--circle
+                                          "
+                                        >
+                                          View exam
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  >
+                                    Intro
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    21/01/2022
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__status">
+                                        <div class="dhx_demo-active">
+                                          active
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    15 min
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__controls">
+                                        <button class="dhx_button edit">
+                                          <i
+                                            class="
+                                              mdi mdi-pencil
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                        <button class="dhx_button remove">
+                                          <i
+                                            class="
+                                              mdi mdi-delete
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  data-dhx-id="u1642765066779"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="4"
+                                  style="height: 40px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_tree-cell dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px 0px 0px 40px;
+                                    "
+                                  >
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      JavaScript with jQuery
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__view">
+                                        <button
+                                          class="
+                                            dhx_button
+                                            dhx_button--color_primary
+                                            dhx_button--size_small
+                                            dhx_button--view_flat
+                                            dhx_button--circle
+                                          "
+                                        >
+                                          View exam
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  >
+                                    Advanced
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    21/01/2022
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__status">
+                                        <div class="dhx_demo-active">
+                                          active
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    15 min
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__controls">
+                                        <button class="dhx_button edit">
+                                          <i
+                                            class="
+                                              mdi mdi-pencil
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                        <button class="dhx_button remove">
+                                          <i
+                                            class="
+                                              mdi mdi-delete
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  data-dhx-id="u1642765066780"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="5"
+                                  style="height: 40px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_tree-cell dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px 0px 0px 40px;
+                                    "
+                                  >
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      Introduction to Node.js
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__view">
+                                        <button
+                                          class="
+                                            dhx_button
+                                            dhx_button--color_primary
+                                            dhx_button--size_small
+                                            dhx_button--view_flat
+                                            dhx_button--circle
+                                          "
+                                        >
+                                          View exam
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  >
+                                    Intro
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    21/01/2022
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__status">
+                                        <div class="dhx_demo-hidden">
+                                          hidden
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    15 min
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__controls">
+                                        <button class="dhx_button edit">
+                                          <i
+                                            class="
+                                              mdi mdi-pencil
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                        <button class="dhx_button remove">
+                                          <i
+                                            class="
+                                              mdi mdi-delete
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  data-dhx-id="u1642765066781"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="6"
+                                  style="height: 40px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_tree-cell dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px 0px 0px 40px;
+                                    "
+                                  >
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      Bootstrap for beginners
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__view">
+                                        <button
+                                          class="
+                                            dhx_button
+                                            dhx_button--color_primary
+                                            dhx_button--size_small
+                                            dhx_button--view_flat
+                                            dhx_button--circle
+                                          "
+                                        >
+                                          View exam
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  >
+                                    Intermediate
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    21/01/2022
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__status">
+                                        <div class="dhx_demo-active">
+                                          active
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    15 min
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__controls">
+                                        <button class="dhx_button edit">
+                                          <i
+                                            class="
+                                              mdi mdi-pencil
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                        <button class="dhx_button remove">
+                                          <i
+                                            class="
+                                              mdi mdi-delete
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  data-dhx-id="Database Technologies"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="7"
+                                  style="height: 40px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_tree-cell
+                                      dhx_grid-expand-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px;
+                                    "
+                                  >
+                                    <div
+                                      class="
+                                        dhx_grid-expand-cell-icon
+                                        dxi dxi-chevron-up
+                                      "
+                                      data-dhx-id="Database Technologies"
+                                      role="button"
+                                      aria-label="Collapse group"
+                                      style="padding: 0px 0px 0px 4px"
+                                    ></div>
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      Database Technologies
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                </div>
+                                <div
+                                  data-dhx-id="u1642765066782"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="8"
+                                  style="height: 40px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_tree-cell dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px 0px 0px 40px;
+                                    "
+                                  >
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      MySQL and SQL
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__view">
+                                        <button
+                                          class="
+                                            dhx_button
+                                            dhx_button--color_primary
+                                            dhx_button--size_small
+                                            dhx_button--view_flat
+                                            dhx_button--circle
+                                          "
+                                        >
+                                          View exam
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  >
+                                    Intermediate
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    21/01/2022
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__status">
+                                        <div class="dhx_demo-active">
+                                          active
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    20 min
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__controls">
+                                        <button class="dhx_button edit">
+                                          <i
+                                            class="
+                                              mdi mdi-pencil
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                        <button class="dhx_button remove">
+                                          <i
+                                            class="
+                                              mdi mdi-delete
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  data-dhx-id="u1642765066783"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="9"
+                                  style="height: 40px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_tree-cell dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px 0px 0px 40px;
+                                    "
+                                  >
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      Oracle PL/SQL and SQL
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__view">
+                                        <button
+                                          class="
+                                            dhx_button
+                                            dhx_button--color_primary
+                                            dhx_button--size_small
+                                            dhx_button--view_flat
+                                            dhx_button--circle
+                                          "
+                                        >
+                                          View exam
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  >
+                                    Advanced
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    21/01/2022
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__status">
+                                        <div class="dhx_demo-hidden">
+                                          hidden
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    11 min
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__controls">
+                                        <button class="dhx_button edit">
+                                          <i
+                                            class="
+                                              mdi mdi-pencil
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                        <button class="dhx_button remove">
+                                          <i
+                                            class="
+                                              mdi mdi-delete
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div
+                                  data-dhx-id="Mobile Technologies"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="10"
+                                  style="height: 40px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_tree-cell
+                                      dhx_grid-expand-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px;
+                                    "
+                                  >
+                                    <div
+                                      class="
+                                        dhx_grid-expand-cell-icon
+                                        dxi dxi-chevron-up
+                                      "
+                                      data-dhx-id="Mobile Technologies"
+                                      role="button"
+                                      aria-label="Collapse group"
+                                      style="padding: 0px 0px 0px 4px"
+                                    ></div>
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      Mobile Technologies
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  ></div>
+                                </div>
+                                <div
+                                  data-dhx-id="u1642765066784"
+                                  class="dhx_grid-row"
+                                  role="row"
+                                  aria-rowindex="11"
+                                  style="height: 41px"
+                                >
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_tree-cell dhx_align-left
+                                    "
+                                    dhx_col_id="exam"
+                                    role="gridcell"
+                                    aria-colindex="1"
+                                    style="
+                                      width: 260px;
+                                      height: 40px;
+                                      padding: 0px 0px 0px 40px;
+                                    "
+                                  >
+                                    <div class="dhx_tree-cell dhx_align-left">
+                                      History of mobile devices
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="view"
+                                    role="gridcell"
+                                    aria-colindex="2"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__view">
+                                        <button
+                                          class="
+                                            dhx_button
+                                            dhx_button--color_primary
+                                            dhx_button--size_small
+                                            dhx_button--view_flat
+                                            dhx_button--circle
+                                          "
+                                        >
+                                          View exam
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-left
+                                    "
+                                    dhx_col_id="level"
+                                    role="gridcell"
+                                    aria-colindex="3"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 347.571px; height: 40px"
+                                  >
+                                    Intro
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell dhx_date-cell dhx_align-left
+                                    "
+                                    dhx_col_id="date"
+                                    role="gridcell"
+                                    aria-colindex="4"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    21/01/2022
+                                  </div>
+                                  <div
+                                    class="dhx_grid-cell dhx_string-cell"
+                                    dhx_col_id="status"
+                                    role="gridcell"
+                                    aria-colindex="5"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__status">
+                                        <div class="dhx_demo-hidden">
+                                          hidden
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="time"
+                                    role="gridcell"
+                                    aria-colindex="6"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    10 min
+                                  </div>
+                                  <div
+                                    class="
+                                      dhx_grid-cell
+                                      dhx_string-cell
+                                      dhx_align-center
+                                    "
+                                    dhx_col_id="controls"
+                                    role="gridcell"
+                                    aria-colindex="7"
+                                    aria-readonly="true"
+                                    tabindex="-1"
+                                    style="width: 137.286px; height: 40px"
+                                  >
+                                    <div
+                                      role="button"
+                                      aria-label="Edit content"
+                                      class="dhx_grid-cell__content"
+                                    >
+                                      <div class="dhx_demo-exam-grid__controls">
+                                        <button class="dhx_button edit">
+                                          <i
+                                            class="
+                                              mdi mdi-pencil
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                        <button class="dhx_button remove">
+                                          <i
+                                            class="
+                                              mdi mdi-delete
+                                              dhx_demo-exam-grid__controls__icon
+                                            "
+                                          ></i>
+                                        </button>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div
+                                role="presentation"
+                                class="dhx_span-spans"
+                              ></div>
+                              <div
+                                aria-hidden="true"
+                                class="dhx_grid_selection"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          class="y-scroll"
+                          style="
+                            width: 6px;
+                            height: 100%;
+                            right: 0px;
+                            top: 0px;
+                            position: absolute;
+                          "
+                        >
+                          <div
+                            class="scroll-runner"
+                            style="height: 0px; top: 0px; opacity: 0"
+                          ></div>
+                        </div>
+                        <div
+                          class="x-scroll"
+                          style="
+                            width: 100%;
+                            height: 6px;
+                            left: 0px;
+                            bottom: 0px;
+                            position: absolute;
+                            background: transparent;
+                          "
+                        >
+                          <div
+                            class="scroll-runner"
+                            style="width: 0px; left: 0px; opacity: 0"
+                          ></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+  
+  <script type="text/javascript" id="">(function(d,b,a){(b[a]=b[a]||[]).push(function(){try{b.yaCounter43004664=new Ya.Metrika({id:43004664,clickmap:!0,trackLinks:!0,accurateTrackBounce:!0,webvisor:!0})}catch(f){}});var e=d.getElementsByTagName("script")[0],c=d.createElement("script");a=function(){e.parentNode.insertBefore(c,e)};c.type="text/javascript";c.async=!0;c.src="https://mc.yandex.ru/metrika/watch.js";"[object Opera]"==b.opera?d.addEventListener("DOMContentLoaded",a,!1):a()})(document,window,"yandex_metrika_callbacks");
+</script>
+<script type="text/javascript" id="">!function(b,e,f,g,a,c,d){b.fbq||(a=b.fbq=function(){a.callMethod?a.callMethod.apply(a,arguments):a.queue.push(arguments)},b._fbq||(b._fbq=a),a.push=a,a.loaded=!0,a.version="2.0",a.queue=[],c=e.createElement(f),c.async=!0,c.src=g,d=e.getElementsByTagName(f)[0],d.parentNode.insertBefore(c,d))}(window,document,"script","https://connect.facebook.net/en_US/fbevents.js");fbq("init","448877565473724");fbq("track","PageView");
+</script>
+<script type="text/javascript" id="">(function(a,e,b,f,g,c,d){a[b]=a[b]||function(){(a[b].q=a[b].q||[]).push(arguments)};c=e.createElement(f);c.async=1;c.src="https://www.clarity.ms/tag/"+g;d=e.getElementsByTagName(f)[0];d.parentNode.insertBefore(c,d)})(window,document,"clarity","script","6xh133hitp");
+</script>
+<iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="inner.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;">
+  
+</iframe>
+
+
+</html>
